@@ -46,4 +46,15 @@
         document.getElementById("mySidebar").style.width = "0";
         document.getElementById("main").style.marginLeft= "0";
     }
+    window.addEventListener('resize', resize);
+
+    function resize() {
+        if (window.innerWidth <= 700) {
+            closeNav();
+            return;
+        }else if(window.innerWidth>=700){
+            openNav();
+            return;
+        }
+    }
 </script>
