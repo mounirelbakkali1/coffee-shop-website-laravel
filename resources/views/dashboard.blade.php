@@ -27,17 +27,17 @@
 
 @section('content')
     <main>
-        <div class="row">
+        <div class="row g-4">
             @if (session('message'))
                 <div class="alert alert-success">
                     {{ session('message') }}
                 </div>
             @endif
-            <div class="col-lg-8">
+            <div class="col-xl-8 col-lg-12">
                 <h4 class="mb-4">List des plat disponible</h4>
                 @include('plats')
             </div>
-            <div class="col-lg-4">
+            <div class="col-xl-4 ">
                 <h4 class="mb-4">List des categories</h4>
                 @include('categories')
             </div>

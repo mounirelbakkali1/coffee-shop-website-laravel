@@ -11,7 +11,7 @@ body{
 
 .main{
     background-color: #dbdbdb;
-    padding: 3%;
+    padding: 5px 3% 3% 3% ;
     font-family: sans-serif;
     min-height: 100vh;
 }
@@ -47,6 +47,7 @@ body{
     color: white;
     padding: 10px 15px;
     border: none;
+    margin-bottom: 10px;
 }
 .sidebar a {
     padding: 8px 8px 8px 32px;

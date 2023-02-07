@@ -31,7 +31,7 @@
             <input type="text" name="description" value="{{ $data['plat']->description }}" required>
         </div>
         <div class="form-check form-switch mb-3 mt-3">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="disponible" checked>
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="disponible"  {{ $data['plat']->disponible==1 ? "checked" :"" }}>
             <label class="form-check-label" for="flexSwitchCheckChecked">disponible</label>
             @error('disponible')
             <div class="error">{{ $message }}</div>

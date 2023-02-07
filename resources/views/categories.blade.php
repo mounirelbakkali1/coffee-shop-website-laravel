@@ -13,11 +13,11 @@
             <td>{{ $category->title }}</td>
             <td>
                 <div style="display: flex">
-                    <button style="margin-right: 5px"><a href="{{ route('category.edit', $category->id) }}" class="text-light text-decoration-none">Edit</a></button>
+                    <button style="margin-right: 5px"><a href="{{ route('category.edit', $category->id) }}" class="text-light text-decoration-none"><i class="bi bi-pencil-square"></i></a></button>
                     <form action="{{ route('category.destroy', $category->id) }}" method="post" >
                         @csrf
                         @method('delete')
-                        <button type="submit">Delete</button>
+                        <button type="submit"><i class="bi bi-trash3"></i>  </button>
                     </form>
                 </div>
             </td>
