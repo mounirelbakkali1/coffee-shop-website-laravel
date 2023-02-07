@@ -25,7 +25,7 @@ class PlatController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'nom' => 'required|max:255|min:10',
+            'nom' => 'required|max:255',
             'description' => 'required|max:255|min:20',
             'price'=> 'required',
             'image' => 'required|image',
@@ -73,7 +73,7 @@ class PlatController extends Controller
     public function update(Request $request, Plat $plat)
     {
         $request->validate([
-            'nom' => 'required|max:255|min:10',
+            'nom' => 'required|max:255',
             'description' => 'required|max:255|min:20',
             'price'=> 'required',
             'image' => 'required|image',

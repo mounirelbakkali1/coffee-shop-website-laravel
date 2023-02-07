@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header bg-primary text-white text-center">
+                    <div class="card-header bg-warning text-white text-center">
                         <h3>Reset Password</h3>
                     </div>
                     <div class="card-body">

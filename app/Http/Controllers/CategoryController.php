@@ -62,12 +62,12 @@ class CategoryController extends Controller
         $category->image = $imageName;
         $category->save();
         session()->flash('message', 'Category updated successfully.');
-        return url()->previous();
+        return redirect()->route("dashboard");
     }
     public function destroy(Category $category)
     {
         $category->delete();
         session()->flash('message', 'Category deleted successfully.');
-        return url()->previous();
+        return redirect()->route("dashboard");
     }
 }
