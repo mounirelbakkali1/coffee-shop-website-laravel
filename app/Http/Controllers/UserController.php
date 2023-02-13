@@ -67,4 +67,27 @@ class UserController extends Controller
         Auth::logout();
         return redirect("/");
     }
+    public function editProfil(){
+        return view("editProfil");
+    }
+    public function updateProfil(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => $request->password !=null ? 'sometimes|min:8|regex:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/' : '',
+            'password_confirmation' => $request->password !=null ?  'sometimes|same:password' : '',
+        ],[
+            'password.regex' => 'The password must contain at least one letter and one number'
+        ]
+        );
+        $user = Auth::user();
+        $user->name=$request->name;
+        $user->email=$request->email;
+        if($request->password){
+            $user->password=bcrypt($request->password);
+        }
+        $user->save();
+        return redirect()->route("dashboard")->with('success',"account updated successfuly !");
+    }
 }

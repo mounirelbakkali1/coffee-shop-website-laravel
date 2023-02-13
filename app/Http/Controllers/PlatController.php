@@ -48,7 +48,7 @@ class PlatController extends Controller
 
     public function index()
     {
-        $plats = Plat::all();
+        $plats = Plat::latest()->get();
         return view('home', compact('plats'));
     }
     public function dashboard()

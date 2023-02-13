@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PlatController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\UserController;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -12,6 +13,8 @@ use Illuminate\Support\Str;
 
 Route::middleware(["auth"])->group(function (){
     Route::get('/dashboard',[PlatController::class, 'dashboard'])->name("dashboard");
+    Route::get('/profil',[UserController::class, 'editProfil'])->name("profil.edit");
+    Route::post('/profil/update',[UserController::class, 'updateProfil'])->name("profil.update");
     // crud plat
     Route::get('/plats/create', [PlatController::class, 'create'])->name('plats.create');
     Route::post('/plats/store', [PlatController::class, 'store'])->name('plats.store');
@@ -28,7 +31,7 @@ Route::middleware(["auth"])->group(function (){
 });
 
 
-Route::post("/user/auth",[\App\Http\Controllers\UserController::class,'authenticate'])->name("user.authenticate");
+Route::post("/user/auth",[UserController::class,'authenticate'])->name("user.authenticate");
 
 Route::get("/user/register",[\App\Http\Controllers\UserController::class,'register'])->name("user.signup");
 Route::post("/user/register/create",[\App\Http\Controllers\UserController::class,'createAccount'])->name("user.create_account");

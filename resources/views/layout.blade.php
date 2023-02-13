@@ -24,6 +24,7 @@
                     <li class="{{request()->routeIs('plats.create') ? "active" :  ""}}"><a class="nav-link text-light p-1" href='{{route('plats.create')}}'>Ajouter Plat</a></li>
                     <li class="{{request()->routeIs('category.create') ? "active" :  ""}}"><a class="nav-link text-light p-1" href='{{route('category.create')}}'>Ajouter une catégorie</a></li>
                     <li><a class="nav-link text-light p-1" href="{{route("logout")}}">log out</a></li>
+                    <li><a class="nav-link text-light p-1" href="{{route("profil.edit")}}">Profil</a></li>
                 </ul>
             </div>
             <div class="main">
